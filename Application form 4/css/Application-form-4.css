@@ -1,0 +1,174 @@
+*{
+    margin: 0;
+    padding: 0;
+    font-family:Arial, Helvetica, sans-serif;
+    box-sizing: border-box;
+}
+body{
+    background-image: linear-gradient(to right bottom, #bdc9fc, #dbc7f4, #f0c7e7, #fccada, #ffd0d0);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+}
+.shapes{
+    position: absolute;
+    left: 0;
+    top: 0;
+    z-index: -1;
+    height: 100vh;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+}
+svg{
+    border: 2px solid green;
+    height: 300rem;
+    width: 300rem;
+    opacity: .2;
+}
+.container{
+    border-top: 5px solid hsl(245, 44%, 36%);
+    border-right: 1px solid rgba(255, 255, 255, 0.459);
+    border-left: 1px solid rgba(255, 255, 255, 0.459);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.459);
+    border-radius: 5px;
+    margin: 10px;
+    width: 30rem;
+    background-color: rgb(255, 255, 255);
+    /* background-color: rgba(255, 255, 255, 0.103); */
+    padding: 20px;
+    /* margin: 50px auto 0; */
+    box-shadow: 0px 0px 25px rgba(0, 0, 0, 0.253);
+}
+.container h1{
+    color: rgb(18, 18, 124);
+    margin-bottom: 30px;
+    text-align: center;
+}
+.form-control{
+    margin-top: 15px;
+    margin-bottom: 15px;
+}
+::placeholder{
+    opacity: .5;
+}
+#name{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+input[type=text]{
+    caret-color: rgb(255, 83, 52);
+    /* box-shadow: 5px 5px 10px rgba(181, 204, 255, 0.164); */
+    box-shadow: 15px 10px 15px rgba(181, 204, 255, 0.466);
+    font-size: 16px;
+    padding: 2px 8px;
+    height: 38px;
+    width: 49%;
+    border: 1px solid rgba(128, 128, 128, 0.267);
+    border-radius: 5px;
+}
+#gendor{
+    display: flex;
+    gap: 20px;
+}
+#male-box, #female-box{
+    box-shadow: 15px 10px 15px rgba(181, 204, 255, 0.466);
+    border: 1px solid rgba(128, 128, 128, 0.267);
+    border-radius: 5px;
+    padding: 8px 16px;
+    color: grey;
+    transition: all .2s ease-out;
+}
+#male-box:hover, #female-box:hover{
+    color: white;
+    background-color:rgb(255, 83, 52);
+    transform: scale(115%);
+    box-shadow: 10px 10px 15px rgba(255, 99, 71, 0.575);
+}
+input[type=radio]:focus .gendorbox{
+    color: white;
+    background-color:rgb(255, 83, 52);
+    box-shadow: 10px 10px 15px rgba(255, 99, 71, 0.575);
+}
+input[type=number], input[type=email],select{
+    /* box-shadow: 5px 5px 10px rgba(181, 204, 255, 0.164); */
+    box-shadow: 15px 10px 15px rgba(181, 204, 255, 0.466);
+    font-size: 1rem;
+    padding: 5px 8px;
+    height: 38px;
+    width: 100%;
+    border: 1px solid rgba(128, 128, 128, 0.267);
+    border-radius: 5px;
+}
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+select{
+    /* box-shadow: 5px 5px 10px rgba(181, 204, 255, 0.164); */
+    box-shadow: 15px 10px 15px rgba(181, 204, 255, 0.466);
+    font-size: 1rem;
+    cursor: pointer;
+    /* appearance: none; */
+}
+textarea{
+    /* box-shadow: 5px 5px 10px rgba(181, 204, 255, 0.164); */
+    font-size: 16px;
+    padding: 5px;
+    width: 100%;
+    border: 1px solid rgba(128, 128, 128, 0.267);
+    border-radius: 5px;
+    box-shadow: 15px 10px 15px rgba(181, 204, 255, 0.466);
+}
+input:hover:not(input[type=radio]), input:focus:not(input[type=radio]) ,select:hover, select:focus, textarea:hover, textarea:focus{
+    /* outline: 1px solid rgb(18, 18, 124); */
+    outline:2px solid  rgb(255, 83, 52);
+    box-shadow: 10px 10px 15px rgba(255, 99, 71, 0.575);
+}
+button{
+    text-align: left;
+    background-color: rgb(25, 47, 119);
+    color: white;
+    font-size: 16px;
+    padding: 10px 12px;
+    width: 100px;
+    border: none;
+    border-radius: 5px;
+    letter-spacing: .1rem;
+    transition: all .3s ease-in-out;
+}
+button span{
+    margin: -6px 0px;
+    font-size: 1.5rem;
+    position: absolute;
+    color: white;
+    transition: .3s ease-out;
+}
+button:hover, button:focus{
+    outline: none;
+    background-color: rgb(255, 83, 52);
+    box-shadow: 10px 10px 15px rgba(255, 99, 71, 0.575);
+    cursor: pointer;
+}
+button:hover span, button:focus span{
+    text-shadow: 2px 5px 10px rgb(255, 83, 52);
+    transform: translateX(25px);
+}
+
+/* Responsive code */
+@media (max-width: 480px) {
+    #name{
+        width:100%;
+        flex-wrap: wrap;
+    }
+    input[type=text]{
+        width: 100%;
+        margin: 5px auto 5px;
+    }
+}
